@@ -1,0 +1,10 @@
+# Metadata
+.DS_Store
+*.sw*
+
+# IDE data
+/.vscode
+/.idea
+
+# Build artifacts
+/target

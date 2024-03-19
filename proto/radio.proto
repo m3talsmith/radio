@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package radio;
+
+option go_package = "./radio";
+
+service RadioAPI {
+  rpc Station(stream Request) returns (stream Broadcast) {}
+}
+
+message Request {
+  optional string name = 1;
+  optional string artist = 2;
+  optional string album = 3;
+  optional string genre = 4;
+}
+
+message Broadcast {
+  oneof result {
+    Sound sound = 1;
+    Error error = 2;
+  }
+}
+
+message Sound {
+  string data = 1;
+  string name = 2;
+  optional string artist = 3;
+  optional string album = 4;
+  optional string genre = 5;
+}
+
+message Error {
+  string message = 1;
+}
