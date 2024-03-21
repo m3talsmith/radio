@@ -3,8 +3,8 @@
 *.sw*
 
 # IDE data
-/.vscode
-/.idea
+.vscode
+.idea
 
 # Build artifacts
 /target

@@ -59,15 +59,9 @@ namespace radio {
 class Broadcast;
 struct BroadcastDefaultTypeInternal;
 extern BroadcastDefaultTypeInternal _Broadcast_default_instance_;
-class Error;
-struct ErrorDefaultTypeInternal;
-extern ErrorDefaultTypeInternal _Error_default_instance_;
 class Request;
 struct RequestDefaultTypeInternal;
 extern RequestDefaultTypeInternal _Request_default_instance_;
-class Sound;
-struct SoundDefaultTypeInternal;
-extern SoundDefaultTypeInternal _Sound_default_instance_;
 }  // namespace radio
 namespace google {
 namespace protobuf {
@@ -80,263 +74,6 @@ namespace radio {
 
 
 // -------------------------------------------------------------------
-
-class Sound final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:radio.Sound) */ {
- public:
-  inline Sound() : Sound(nullptr) {}
-  ~Sound() override;
-  template<typename = void>
-  explicit PROTOBUF_CONSTEXPR Sound(::google::protobuf::internal::ConstantInitialized);
-
-  inline Sound(const Sound& from)
-      : Sound(nullptr, from) {}
-  Sound(Sound&& from) noexcept
-    : Sound() {
-    *this = ::std::move(from);
-  }
-
-  inline Sound& operator=(const Sound& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline Sound& operator=(Sound&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const Sound& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const Sound* internal_default_instance() {
-    return reinterpret_cast<const Sound*>(
-               &_Sound_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    2;
-
-  friend void swap(Sound& a, Sound& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(Sound* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr &&
-        GetArena() == other->GetArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(Sound* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  Sound* New(::google::protobuf::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<Sound>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const Sound& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom( const Sound& from) {
-    Sound::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
-  void SharedDtor();
-  void InternalSwap(Sound* other);
-
-  private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() {
-    return "radio.Sound";
-  }
-  protected:
-  explicit Sound(::google::protobuf::Arena* arena);
-  Sound(::google::protobuf::Arena* arena, const Sound& from);
-  public:
-
-  static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kDataFieldNumber = 1,
-    kNameFieldNumber = 2,
-    kArtistFieldNumber = 3,
-    kAlbumFieldNumber = 4,
-    kGenreFieldNumber = 5,
-  };
-  // string data = 1;
-  void clear_data() ;
-  const std::string& data() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_data(Arg_&& arg, Args_... args);
-  std::string* mutable_data();
-  PROTOBUF_NODISCARD std::string* release_data();
-  void set_allocated_data(std::string* value);
-
-  private:
-  const std::string& _internal_data() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_data(
-      const std::string& value);
-  std::string* _internal_mutable_data();
-
-  public:
-  // string name = 2;
-  void clear_name() ;
-  const std::string& name() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_name(Arg_&& arg, Args_... args);
-  std::string* mutable_name();
-  PROTOBUF_NODISCARD std::string* release_name();
-  void set_allocated_name(std::string* value);
-
-  private:
-  const std::string& _internal_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(
-      const std::string& value);
-  std::string* _internal_mutable_name();
-
-  public:
-  // optional string artist = 3;
-  bool has_artist() const;
-  void clear_artist() ;
-  const std::string& artist() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_artist(Arg_&& arg, Args_... args);
-  std::string* mutable_artist();
-  PROTOBUF_NODISCARD std::string* release_artist();
-  void set_allocated_artist(std::string* value);
-
-  private:
-  const std::string& _internal_artist() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_artist(
-      const std::string& value);
-  std::string* _internal_mutable_artist();
-
-  public:
-  // optional string album = 4;
-  bool has_album() const;
-  void clear_album() ;
-  const std::string& album() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_album(Arg_&& arg, Args_... args);
-  std::string* mutable_album();
-  PROTOBUF_NODISCARD std::string* release_album();
-  void set_allocated_album(std::string* value);
-
-  private:
-  const std::string& _internal_album() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_album(
-      const std::string& value);
-  std::string* _internal_mutable_album();
-
-  public:
-  // optional string genre = 5;
-  bool has_genre() const;
-  void clear_genre() ;
-  const std::string& genre() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_genre(Arg_&& arg, Args_... args);
-  std::string* mutable_genre();
-  PROTOBUF_NODISCARD std::string* release_genre();
-  void set_allocated_genre(std::string* value);
-
-  private:
-  const std::string& _internal_genre() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_genre(
-      const std::string& value);
-  std::string* _internal_mutable_genre();
-
-  public:
-  // @@protoc_insertion_point(class_scope:radio.Sound)
- private:
-  class _Internal;
-
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      3, 5, 0,
-      44, 2>
-      _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-
-        inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr data_;
-    ::google::protobuf::internal::ArenaStringPtr name_;
-    ::google::protobuf::internal::ArenaStringPtr artist_;
-    ::google::protobuf::internal::ArenaStringPtr album_;
-    ::google::protobuf::internal::ArenaStringPtr genre_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_radio_2eproto;
-};// -------------------------------------------------------------------
 
 class Request final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:radio.Request) */ {
@@ -470,249 +207,26 @@ class Request final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNameFieldNumber = 1,
-    kArtistFieldNumber = 2,
-    kAlbumFieldNumber = 3,
-    kGenreFieldNumber = 4,
+    kCallerIdFieldNumber = 1,
+    kMessageFieldNumber = 2,
   };
-  // optional string name = 1;
-  bool has_name() const;
-  void clear_name() ;
-  const std::string& name() const;
+  // string caller_id = 1;
+  void clear_caller_id() ;
+  const std::string& caller_id() const;
   template <typename Arg_ = const std::string&, typename... Args_>
-  void set_name(Arg_&& arg, Args_... args);
-  std::string* mutable_name();
-  PROTOBUF_NODISCARD std::string* release_name();
-  void set_allocated_name(std::string* value);
+  void set_caller_id(Arg_&& arg, Args_... args);
+  std::string* mutable_caller_id();
+  PROTOBUF_NODISCARD std::string* release_caller_id();
+  void set_allocated_caller_id(std::string* value);
 
   private:
-  const std::string& _internal_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(
+  const std::string& _internal_caller_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_caller_id(
       const std::string& value);
-  std::string* _internal_mutable_name();
+  std::string* _internal_mutable_caller_id();
 
   public:
-  // optional string artist = 2;
-  bool has_artist() const;
-  void clear_artist() ;
-  const std::string& artist() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_artist(Arg_&& arg, Args_... args);
-  std::string* mutable_artist();
-  PROTOBUF_NODISCARD std::string* release_artist();
-  void set_allocated_artist(std::string* value);
-
-  private:
-  const std::string& _internal_artist() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_artist(
-      const std::string& value);
-  std::string* _internal_mutable_artist();
-
-  public:
-  // optional string album = 3;
-  bool has_album() const;
-  void clear_album() ;
-  const std::string& album() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_album(Arg_&& arg, Args_... args);
-  std::string* mutable_album();
-  PROTOBUF_NODISCARD std::string* release_album();
-  void set_allocated_album(std::string* value);
-
-  private:
-  const std::string& _internal_album() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_album(
-      const std::string& value);
-  std::string* _internal_mutable_album();
-
-  public:
-  // optional string genre = 4;
-  bool has_genre() const;
-  void clear_genre() ;
-  const std::string& genre() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_genre(Arg_&& arg, Args_... args);
-  std::string* mutable_genre();
-  PROTOBUF_NODISCARD std::string* release_genre();
-  void set_allocated_genre(std::string* value);
-
-  private:
-  const std::string& _internal_genre() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_genre(
-      const std::string& value);
-  std::string* _internal_mutable_genre();
-
-  public:
-  // @@protoc_insertion_point(class_scope:radio.Request)
- private:
-  class _Internal;
-
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      2, 4, 0,
-      42, 2>
-      _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-
-        inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr name_;
-    ::google::protobuf::internal::ArenaStringPtr artist_;
-    ::google::protobuf::internal::ArenaStringPtr album_;
-    ::google::protobuf::internal::ArenaStringPtr genre_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_radio_2eproto;
-};// -------------------------------------------------------------------
-
-class Error final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:radio.Error) */ {
- public:
-  inline Error() : Error(nullptr) {}
-  ~Error() override;
-  template<typename = void>
-  explicit PROTOBUF_CONSTEXPR Error(::google::protobuf::internal::ConstantInitialized);
-
-  inline Error(const Error& from)
-      : Error(nullptr, from) {}
-  Error(Error&& from) noexcept
-    : Error() {
-    *this = ::std::move(from);
-  }
-
-  inline Error& operator=(const Error& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline Error& operator=(Error&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const Error& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const Error* internal_default_instance() {
-    return reinterpret_cast<const Error*>(
-               &_Error_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    3;
-
-  friend void swap(Error& a, Error& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(Error* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr &&
-        GetArena() == other->GetArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(Error* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  Error* New(::google::protobuf::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<Error>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const Error& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom( const Error& from) {
-    Error::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
-  void SharedDtor();
-  void InternalSwap(Error* other);
-
-  private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() {
-    return "radio.Error";
-  }
-  protected:
-  explicit Error(::google::protobuf::Arena* arena);
-  Error(::google::protobuf::Arena* arena, const Error& from);
-  public:
-
-  static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kMessageFieldNumber = 1,
-  };
-  // string message = 1;
+  // string message = 2;
   void clear_message() ;
   const std::string& message() const;
   template <typename Arg_ = const std::string&, typename... Args_>
@@ -728,14 +242,14 @@ class Error final :
   std::string* _internal_mutable_message();
 
   public:
-  // @@protoc_insertion_point(class_scope:radio.Error)
+  // @@protoc_insertion_point(class_scope:radio.Request)
  private:
   class _Internal;
 
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      0, 1, 0,
-      27, 2>
+      1, 2, 0,
+      38, 2>
       _table_;
   friend class ::google::protobuf::MessageLite;
   friend class ::google::protobuf::Arena;
@@ -751,6 +265,7 @@ class Error final :
                               ::google::protobuf::Arena* arena);
         inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
                               ::google::protobuf::Arena* arena, const Impl_& from);
+    ::google::protobuf::internal::ArenaStringPtr caller_id_;
     ::google::protobuf::internal::ArenaStringPtr message_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -813,12 +328,6 @@ class Broadcast final :
   static const Broadcast& default_instance() {
     return *internal_default_instance();
   }
-  enum ResultCase {
-    kSound = 1,
-    kError = 2,
-    RESULT_NOT_SET = 0,
-  };
-
   static inline const Broadcast* internal_default_instance() {
     return reinterpret_cast<const Broadcast*>(
                &_Broadcast_default_instance_);
@@ -897,62 +406,49 @@ class Broadcast final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSoundFieldNumber = 1,
-    kErrorFieldNumber = 2,
+    kCallerIdFieldNumber = 1,
+    kMessageFieldNumber = 2,
   };
-  // .radio.Sound sound = 1;
-  bool has_sound() const;
-  private:
-  bool _internal_has_sound() const;
-
-  public:
-  void clear_sound() ;
-  const ::radio::Sound& sound() const;
-  PROTOBUF_NODISCARD ::radio::Sound* release_sound();
-  ::radio::Sound* mutable_sound();
-  void set_allocated_sound(::radio::Sound* value);
-  void unsafe_arena_set_allocated_sound(::radio::Sound* value);
-  ::radio::Sound* unsafe_arena_release_sound();
+  // string caller_id = 1;
+  void clear_caller_id() ;
+  const std::string& caller_id() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_caller_id(Arg_&& arg, Args_... args);
+  std::string* mutable_caller_id();
+  PROTOBUF_NODISCARD std::string* release_caller_id();
+  void set_allocated_caller_id(std::string* value);
 
   private:
-  const ::radio::Sound& _internal_sound() const;
-  ::radio::Sound* _internal_mutable_sound();
+  const std::string& _internal_caller_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_caller_id(
+      const std::string& value);
+  std::string* _internal_mutable_caller_id();
 
   public:
-  // .radio.Error error = 2;
-  bool has_error() const;
-  private:
-  bool _internal_has_error() const;
-
-  public:
-  void clear_error() ;
-  const ::radio::Error& error() const;
-  PROTOBUF_NODISCARD ::radio::Error* release_error();
-  ::radio::Error* mutable_error();
-  void set_allocated_error(::radio::Error* value);
-  void unsafe_arena_set_allocated_error(::radio::Error* value);
-  ::radio::Error* unsafe_arena_release_error();
+  // string message = 2;
+  void clear_message() ;
+  const std::string& message() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_message(Arg_&& arg, Args_... args);
+  std::string* mutable_message();
+  PROTOBUF_NODISCARD std::string* release_message();
+  void set_allocated_message(std::string* value);
 
   private:
-  const ::radio::Error& _internal_error() const;
-  ::radio::Error* _internal_mutable_error();
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(
+      const std::string& value);
+  std::string* _internal_mutable_message();
 
   public:
-  void clear_result();
-  ResultCase result_case() const;
   // @@protoc_insertion_point(class_scope:radio.Broadcast)
  private:
   class _Internal;
-  void set_has_sound();
-  void set_has_error();
-
-  inline bool has_result() const;
-  inline void clear_has_result();
 
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      0, 2, 2,
-      0, 2>
+      1, 2, 0,
+      40, 2>
       _table_;
   friend class ::google::protobuf::MessageLite;
   friend class ::google::protobuf::Arena;
@@ -968,15 +464,9 @@ class Broadcast final :
                               ::google::protobuf::Arena* arena);
         inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
                               ::google::protobuf::Arena* arena, const Impl_& from);
-    union ResultUnion {
-      constexpr ResultUnion() : _constinit_{} {}
-        ::google::protobuf::internal::ConstantInitialized _constinit_;
-      ::radio::Sound* sound_;
-      ::radio::Error* error_;
-    } result_;
+    ::google::protobuf::internal::ArenaStringPtr caller_id_;
+    ::google::protobuf::internal::ArenaStringPtr message_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    ::uint32_t _oneof_case_[1];
-
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -999,825 +489,102 @@ class Broadcast final :
 
 // Request
 
-// optional string name = 1;
-inline bool Request::has_name() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline void Request::clear_name() {
+// string caller_id = 1;
+inline void Request::clear_caller_id() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_.name_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000001u;
+  _impl_.caller_id_.ClearToEmpty();
 }
-inline const std::string& Request::name() const
+inline const std::string& Request::caller_id() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:radio.Request.name)
-  return _internal_name();
+  // @@protoc_insertion_point(field_get:radio.Request.caller_id)
+  return _internal_caller_id();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void Request::set_name(Arg_&& arg,
-                                                     Args_... args) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:radio.Request.name)
-}
-inline std::string* Request::mutable_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:radio.Request.name)
-  return _s;
-}
-inline const std::string& Request::_internal_name() const {
-  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  return _impl_.name_.Get();
-}
-inline void Request::_internal_set_name(const std::string& value) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.name_.Set(value, GetArena());
-}
-inline std::string* Request::_internal_mutable_name() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  return _impl_.name_.Mutable( GetArena());
-}
-inline std::string* Request::release_name() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  // @@protoc_insertion_point(field_release:radio.Request.name)
-  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  auto* released = _impl_.name_.Release();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.name_.Set("", GetArena());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return released;
-}
-inline void Request::set_allocated_name(std::string* value) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-  _impl_.name_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.name_.IsDefault()) {
-          _impl_.name_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:radio.Request.name)
-}
-
-// optional string artist = 2;
-inline bool Request::has_artist() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
-  return value;
-}
-inline void Request::clear_artist() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_.artist_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000002u;
-}
-inline const std::string& Request::artist() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:radio.Request.artist)
-  return _internal_artist();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void Request::set_artist(Arg_&& arg,
-                                                     Args_... args) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.artist_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:radio.Request.artist)
-}
-inline std::string* Request::mutable_artist() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_artist();
-  // @@protoc_insertion_point(field_mutable:radio.Request.artist)
-  return _s;
-}
-inline const std::string& Request::_internal_artist() const {
-  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  return _impl_.artist_.Get();
-}
-inline void Request::_internal_set_artist(const std::string& value) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.artist_.Set(value, GetArena());
-}
-inline std::string* Request::_internal_mutable_artist() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  return _impl_.artist_.Mutable( GetArena());
-}
-inline std::string* Request::release_artist() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  // @@protoc_insertion_point(field_release:radio.Request.artist)
-  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000002u;
-  auto* released = _impl_.artist_.Release();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.artist_.Set("", GetArena());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return released;
-}
-inline void Request::set_allocated_artist(std::string* value) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000002u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000002u;
-  }
-  _impl_.artist_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.artist_.IsDefault()) {
-          _impl_.artist_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:radio.Request.artist)
-}
-
-// optional string album = 3;
-inline bool Request::has_album() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
-  return value;
-}
-inline void Request::clear_album() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_.album_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000004u;
-}
-inline const std::string& Request::album() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:radio.Request.album)
-  return _internal_album();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void Request::set_album(Arg_&& arg,
-                                                     Args_... args) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000004u;
-  _impl_.album_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:radio.Request.album)
-}
-inline std::string* Request::mutable_album() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_album();
-  // @@protoc_insertion_point(field_mutable:radio.Request.album)
-  return _s;
-}
-inline const std::string& Request::_internal_album() const {
-  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  return _impl_.album_.Get();
-}
-inline void Request::_internal_set_album(const std::string& value) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000004u;
-  _impl_.album_.Set(value, GetArena());
-}
-inline std::string* Request::_internal_mutable_album() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000004u;
-  return _impl_.album_.Mutable( GetArena());
-}
-inline std::string* Request::release_album() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  // @@protoc_insertion_point(field_release:radio.Request.album)
-  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000004u;
-  auto* released = _impl_.album_.Release();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.album_.Set("", GetArena());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return released;
-}
-inline void Request::set_allocated_album(std::string* value) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000004u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000004u;
-  }
-  _impl_.album_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.album_.IsDefault()) {
-          _impl_.album_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:radio.Request.album)
-}
-
-// optional string genre = 4;
-inline bool Request::has_genre() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
-  return value;
-}
-inline void Request::clear_genre() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_.genre_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000008u;
-}
-inline const std::string& Request::genre() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:radio.Request.genre)
-  return _internal_genre();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void Request::set_genre(Arg_&& arg,
-                                                     Args_... args) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000008u;
-  _impl_.genre_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:radio.Request.genre)
-}
-inline std::string* Request::mutable_genre() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_genre();
-  // @@protoc_insertion_point(field_mutable:radio.Request.genre)
-  return _s;
-}
-inline const std::string& Request::_internal_genre() const {
-  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  return _impl_.genre_.Get();
-}
-inline void Request::_internal_set_genre(const std::string& value) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000008u;
-  _impl_.genre_.Set(value, GetArena());
-}
-inline std::string* Request::_internal_mutable_genre() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000008u;
-  return _impl_.genre_.Mutable( GetArena());
-}
-inline std::string* Request::release_genre() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  // @@protoc_insertion_point(field_release:radio.Request.genre)
-  if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000008u;
-  auto* released = _impl_.genre_.Release();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.genre_.Set("", GetArena());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return released;
-}
-inline void Request::set_allocated_genre(std::string* value) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000008u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000008u;
-  }
-  _impl_.genre_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.genre_.IsDefault()) {
-          _impl_.genre_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:radio.Request.genre)
-}
-
-// -------------------------------------------------------------------
-
-// Broadcast
-
-// .radio.Sound sound = 1;
-inline bool Broadcast::has_sound() const {
-  return result_case() == kSound;
-}
-inline bool Broadcast::_internal_has_sound() const {
-  return result_case() == kSound;
-}
-inline void Broadcast::set_has_sound() {
-  _impl_._oneof_case_[0] = kSound;
-}
-inline void Broadcast::clear_sound() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (result_case() == kSound) {
-    if (GetArena() == nullptr) {
-      delete _impl_.result_.sound_;
-    }
-    clear_has_result();
-  }
-}
-inline ::radio::Sound* Broadcast::release_sound() {
-  // @@protoc_insertion_point(field_release:radio.Broadcast.sound)
-  if (result_case() == kSound) {
-    clear_has_result();
-    auto* temp = _impl_.result_.sound_;
-    if (GetArena() != nullptr) {
-      temp = ::google::protobuf::internal::DuplicateIfNonNull(temp);
-    }
-    _impl_.result_.sound_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::radio::Sound& Broadcast::_internal_sound() const {
-  return result_case() == kSound ? *_impl_.result_.sound_ : reinterpret_cast<::radio::Sound&>(::radio::_Sound_default_instance_);
-}
-inline const ::radio::Sound& Broadcast::sound() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:radio.Broadcast.sound)
-  return _internal_sound();
-}
-inline ::radio::Sound* Broadcast::unsafe_arena_release_sound() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:radio.Broadcast.sound)
-  if (result_case() == kSound) {
-    clear_has_result();
-    auto* temp = _impl_.result_.sound_;
-    _impl_.result_.sound_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline void Broadcast::unsafe_arena_set_allocated_sound(::radio::Sound* value) {
-  // We rely on the oneof clear method to free the earlier contents
-  // of this oneof. We can directly use the pointer we're given to
-  // set the new value.
-  clear_result();
-  if (value) {
-    set_has_sound();
-    _impl_.result_.sound_ = value;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:radio.Broadcast.sound)
-}
-inline ::radio::Sound* Broadcast::_internal_mutable_sound() {
-  if (result_case() != kSound) {
-    clear_result();
-    set_has_sound();
-    _impl_.result_.sound_ = CreateMaybeMessage<::radio::Sound>(GetArena());
-  }
-  return _impl_.result_.sound_;
-}
-inline ::radio::Sound* Broadcast::mutable_sound() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::radio::Sound* _msg = _internal_mutable_sound();
-  // @@protoc_insertion_point(field_mutable:radio.Broadcast.sound)
-  return _msg;
-}
-
-// .radio.Error error = 2;
-inline bool Broadcast::has_error() const {
-  return result_case() == kError;
-}
-inline bool Broadcast::_internal_has_error() const {
-  return result_case() == kError;
-}
-inline void Broadcast::set_has_error() {
-  _impl_._oneof_case_[0] = kError;
-}
-inline void Broadcast::clear_error() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (result_case() == kError) {
-    if (GetArena() == nullptr) {
-      delete _impl_.result_.error_;
-    }
-    clear_has_result();
-  }
-}
-inline ::radio::Error* Broadcast::release_error() {
-  // @@protoc_insertion_point(field_release:radio.Broadcast.error)
-  if (result_case() == kError) {
-    clear_has_result();
-    auto* temp = _impl_.result_.error_;
-    if (GetArena() != nullptr) {
-      temp = ::google::protobuf::internal::DuplicateIfNonNull(temp);
-    }
-    _impl_.result_.error_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::radio::Error& Broadcast::_internal_error() const {
-  return result_case() == kError ? *_impl_.result_.error_ : reinterpret_cast<::radio::Error&>(::radio::_Error_default_instance_);
-}
-inline const ::radio::Error& Broadcast::error() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:radio.Broadcast.error)
-  return _internal_error();
-}
-inline ::radio::Error* Broadcast::unsafe_arena_release_error() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:radio.Broadcast.error)
-  if (result_case() == kError) {
-    clear_has_result();
-    auto* temp = _impl_.result_.error_;
-    _impl_.result_.error_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline void Broadcast::unsafe_arena_set_allocated_error(::radio::Error* value) {
-  // We rely on the oneof clear method to free the earlier contents
-  // of this oneof. We can directly use the pointer we're given to
-  // set the new value.
-  clear_result();
-  if (value) {
-    set_has_error();
-    _impl_.result_.error_ = value;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:radio.Broadcast.error)
-}
-inline ::radio::Error* Broadcast::_internal_mutable_error() {
-  if (result_case() != kError) {
-    clear_result();
-    set_has_error();
-    _impl_.result_.error_ = CreateMaybeMessage<::radio::Error>(GetArena());
-  }
-  return _impl_.result_.error_;
-}
-inline ::radio::Error* Broadcast::mutable_error() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::radio::Error* _msg = _internal_mutable_error();
-  // @@protoc_insertion_point(field_mutable:radio.Broadcast.error)
-  return _msg;
-}
-
-inline bool Broadcast::has_result() const {
-  return result_case() != RESULT_NOT_SET;
-}
-inline void Broadcast::clear_has_result() {
-  _impl_._oneof_case_[0] = RESULT_NOT_SET;
-}
-inline Broadcast::ResultCase Broadcast::result_case() const {
-  return Broadcast::ResultCase(_impl_._oneof_case_[0]);
-}
-// -------------------------------------------------------------------
-
-// Sound
-
-// string data = 1;
-inline void Sound::clear_data() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_.data_.ClearToEmpty();
-}
-inline const std::string& Sound::data() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:radio.Sound.data)
-  return _internal_data();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void Sound::set_data(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void Request::set_caller_id(Arg_&& arg,
                                                      Args_... args) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ;
-  _impl_.data_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:radio.Sound.data)
+  _impl_.caller_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:radio.Request.caller_id)
 }
-inline std::string* Sound::mutable_data() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_data();
-  // @@protoc_insertion_point(field_mutable:radio.Sound.data)
+inline std::string* Request::mutable_caller_id() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_caller_id();
+  // @@protoc_insertion_point(field_mutable:radio.Request.caller_id)
   return _s;
 }
-inline const std::string& Sound::_internal_data() const {
+inline const std::string& Request::_internal_caller_id() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  return _impl_.data_.Get();
+  return _impl_.caller_id_.Get();
 }
-inline void Sound::_internal_set_data(const std::string& value) {
+inline void Request::_internal_set_caller_id(const std::string& value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ;
-  _impl_.data_.Set(value, GetArena());
+  _impl_.caller_id_.Set(value, GetArena());
 }
-inline std::string* Sound::_internal_mutable_data() {
+inline std::string* Request::_internal_mutable_caller_id() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ;
-  return _impl_.data_.Mutable( GetArena());
+  return _impl_.caller_id_.Mutable( GetArena());
 }
-inline std::string* Sound::release_data() {
+inline std::string* Request::release_caller_id() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  // @@protoc_insertion_point(field_release:radio.Sound.data)
-  return _impl_.data_.Release();
+  // @@protoc_insertion_point(field_release:radio.Request.caller_id)
+  return _impl_.caller_id_.Release();
 }
-inline void Sound::set_allocated_data(std::string* value) {
+inline void Request::set_allocated_caller_id(std::string* value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_.data_.SetAllocated(value, GetArena());
+  _impl_.caller_id_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.data_.IsDefault()) {
-          _impl_.data_.Set("", GetArena());
+        if (_impl_.caller_id_.IsDefault()) {
+          _impl_.caller_id_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:radio.Sound.data)
+  // @@protoc_insertion_point(field_set_allocated:radio.Request.caller_id)
 }
 
-// string name = 2;
-inline void Sound::clear_name() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_.name_.ClearToEmpty();
-}
-inline const std::string& Sound::name() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:radio.Sound.name)
-  return _internal_name();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void Sound::set_name(Arg_&& arg,
-                                                     Args_... args) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  ;
-  _impl_.name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:radio.Sound.name)
-}
-inline std::string* Sound::mutable_name() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:radio.Sound.name)
-  return _s;
-}
-inline const std::string& Sound::_internal_name() const {
-  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  return _impl_.name_.Get();
-}
-inline void Sound::_internal_set_name(const std::string& value) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  ;
-  _impl_.name_.Set(value, GetArena());
-}
-inline std::string* Sound::_internal_mutable_name() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  ;
-  return _impl_.name_.Mutable( GetArena());
-}
-inline std::string* Sound::release_name() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  // @@protoc_insertion_point(field_release:radio.Sound.name)
-  return _impl_.name_.Release();
-}
-inline void Sound::set_allocated_name(std::string* value) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_.name_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.name_.IsDefault()) {
-          _impl_.name_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:radio.Sound.name)
-}
-
-// optional string artist = 3;
-inline bool Sound::has_artist() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline void Sound::clear_artist() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_.artist_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
-inline const std::string& Sound::artist() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:radio.Sound.artist)
-  return _internal_artist();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void Sound::set_artist(Arg_&& arg,
-                                                     Args_... args) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.artist_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:radio.Sound.artist)
-}
-inline std::string* Sound::mutable_artist() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_artist();
-  // @@protoc_insertion_point(field_mutable:radio.Sound.artist)
-  return _s;
-}
-inline const std::string& Sound::_internal_artist() const {
-  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  return _impl_.artist_.Get();
-}
-inline void Sound::_internal_set_artist(const std::string& value) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.artist_.Set(value, GetArena());
-}
-inline std::string* Sound::_internal_mutable_artist() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  return _impl_.artist_.Mutable( GetArena());
-}
-inline std::string* Sound::release_artist() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  // @@protoc_insertion_point(field_release:radio.Sound.artist)
-  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  auto* released = _impl_.artist_.Release();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.artist_.Set("", GetArena());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return released;
-}
-inline void Sound::set_allocated_artist(std::string* value) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-  _impl_.artist_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.artist_.IsDefault()) {
-          _impl_.artist_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:radio.Sound.artist)
-}
-
-// optional string album = 4;
-inline bool Sound::has_album() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
-  return value;
-}
-inline void Sound::clear_album() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_.album_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000002u;
-}
-inline const std::string& Sound::album() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:radio.Sound.album)
-  return _internal_album();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void Sound::set_album(Arg_&& arg,
-                                                     Args_... args) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.album_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:radio.Sound.album)
-}
-inline std::string* Sound::mutable_album() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_album();
-  // @@protoc_insertion_point(field_mutable:radio.Sound.album)
-  return _s;
-}
-inline const std::string& Sound::_internal_album() const {
-  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  return _impl_.album_.Get();
-}
-inline void Sound::_internal_set_album(const std::string& value) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.album_.Set(value, GetArena());
-}
-inline std::string* Sound::_internal_mutable_album() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  return _impl_.album_.Mutable( GetArena());
-}
-inline std::string* Sound::release_album() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  // @@protoc_insertion_point(field_release:radio.Sound.album)
-  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000002u;
-  auto* released = _impl_.album_.Release();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.album_.Set("", GetArena());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return released;
-}
-inline void Sound::set_allocated_album(std::string* value) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000002u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000002u;
-  }
-  _impl_.album_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.album_.IsDefault()) {
-          _impl_.album_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:radio.Sound.album)
-}
-
-// optional string genre = 5;
-inline bool Sound::has_genre() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
-  return value;
-}
-inline void Sound::clear_genre() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_.genre_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000004u;
-}
-inline const std::string& Sound::genre() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:radio.Sound.genre)
-  return _internal_genre();
-}
-template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void Sound::set_genre(Arg_&& arg,
-                                                     Args_... args) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000004u;
-  _impl_.genre_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:radio.Sound.genre)
-}
-inline std::string* Sound::mutable_genre() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  std::string* _s = _internal_mutable_genre();
-  // @@protoc_insertion_point(field_mutable:radio.Sound.genre)
-  return _s;
-}
-inline const std::string& Sound::_internal_genre() const {
-  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  return _impl_.genre_.Get();
-}
-inline void Sound::_internal_set_genre(const std::string& value) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000004u;
-  _impl_.genre_.Set(value, GetArena());
-}
-inline std::string* Sound::_internal_mutable_genre() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000004u;
-  return _impl_.genre_.Mutable( GetArena());
-}
-inline std::string* Sound::release_genre() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  // @@protoc_insertion_point(field_release:radio.Sound.genre)
-  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000004u;
-  auto* released = _impl_.genre_.Release();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.genre_.Set("", GetArena());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return released;
-}
-inline void Sound::set_allocated_genre(std::string* value) {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000004u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000004u;
-  }
-  _impl_.genre_.SetAllocated(value, GetArena());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        if (_impl_.genre_.IsDefault()) {
-          _impl_.genre_.Set("", GetArena());
-        }
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:radio.Sound.genre)
-}
-
-// -------------------------------------------------------------------
-
-// Error
-
-// string message = 1;
-inline void Error::clear_message() {
+// string message = 2;
+inline void Request::clear_message() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.message_.ClearToEmpty();
 }
-inline const std::string& Error::message() const
+inline const std::string& Request::message() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:radio.Error.message)
+  // @@protoc_insertion_point(field_get:radio.Request.message)
   return _internal_message();
 }
 template <typename Arg_, typename... Args_>
-inline PROTOBUF_ALWAYS_INLINE void Error::set_message(Arg_&& arg,
+inline PROTOBUF_ALWAYS_INLINE void Request::set_message(Arg_&& arg,
                                                      Args_... args) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ;
   _impl_.message_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:radio.Error.message)
+  // @@protoc_insertion_point(field_set:radio.Request.message)
 }
-inline std::string* Error::mutable_message() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline std::string* Request::mutable_message() ABSL_ATTRIBUTE_LIFETIME_BOUND {
   std::string* _s = _internal_mutable_message();
-  // @@protoc_insertion_point(field_mutable:radio.Error.message)
+  // @@protoc_insertion_point(field_mutable:radio.Request.message)
   return _s;
 }
-inline const std::string& Error::_internal_message() const {
+inline const std::string& Request::_internal_message() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
   return _impl_.message_.Get();
 }
-inline void Error::_internal_set_message(const std::string& value) {
+inline void Request::_internal_set_message(const std::string& value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ;
   _impl_.message_.Set(value, GetArena());
 }
-inline std::string* Error::_internal_mutable_message() {
+inline std::string* Request::_internal_mutable_message() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ;
   return _impl_.message_.Mutable( GetArena());
 }
-inline std::string* Error::release_message() {
+inline std::string* Request::release_message() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  // @@protoc_insertion_point(field_release:radio.Error.message)
+  // @@protoc_insertion_point(field_release:radio.Request.message)
   return _impl_.message_.Release();
 }
-inline void Error::set_allocated_message(std::string* value) {
+inline void Request::set_allocated_message(std::string* value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.message_.SetAllocated(value, GetArena());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -1825,7 +592,117 @@ inline void Error::set_allocated_message(std::string* value) {
           _impl_.message_.Set("", GetArena());
         }
   #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:radio.Error.message)
+  // @@protoc_insertion_point(field_set_allocated:radio.Request.message)
+}
+
+// -------------------------------------------------------------------
+
+// Broadcast
+
+// string caller_id = 1;
+inline void Broadcast::clear_caller_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.caller_id_.ClearToEmpty();
+}
+inline const std::string& Broadcast::caller_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:radio.Broadcast.caller_id)
+  return _internal_caller_id();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void Broadcast::set_caller_id(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.caller_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:radio.Broadcast.caller_id)
+}
+inline std::string* Broadcast::mutable_caller_id() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_caller_id();
+  // @@protoc_insertion_point(field_mutable:radio.Broadcast.caller_id)
+  return _s;
+}
+inline const std::string& Broadcast::_internal_caller_id() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.caller_id_.Get();
+}
+inline void Broadcast::_internal_set_caller_id(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.caller_id_.Set(value, GetArena());
+}
+inline std::string* Broadcast::_internal_mutable_caller_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.caller_id_.Mutable( GetArena());
+}
+inline std::string* Broadcast::release_caller_id() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:radio.Broadcast.caller_id)
+  return _impl_.caller_id_.Release();
+}
+inline void Broadcast::set_allocated_caller_id(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.caller_id_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.caller_id_.IsDefault()) {
+          _impl_.caller_id_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:radio.Broadcast.caller_id)
+}
+
+// string message = 2;
+inline void Broadcast::clear_message() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.message_.ClearToEmpty();
+}
+inline const std::string& Broadcast::message() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:radio.Broadcast.message)
+  return _internal_message();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void Broadcast::set_message(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.message_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:radio.Broadcast.message)
+}
+inline std::string* Broadcast::mutable_message() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:radio.Broadcast.message)
+  return _s;
+}
+inline const std::string& Broadcast::_internal_message() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.message_.Get();
+}
+inline void Broadcast::_internal_set_message(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.message_.Set(value, GetArena());
+}
+inline std::string* Broadcast::_internal_mutable_message() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.message_.Mutable( GetArena());
+}
+inline std::string* Broadcast::release_message() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:radio.Broadcast.message)
+  return _impl_.message_.Release();
+}
+inline void Broadcast::set_allocated_message(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.message_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.message_.IsDefault()) {
+          _impl_.message_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:radio.Broadcast.message)
 }
 
 #ifdef __GNUC__

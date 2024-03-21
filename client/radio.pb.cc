@@ -22,54 +22,15 @@ namespace _pbi = ::google::protobuf::internal;
 namespace _fl = ::google::protobuf::internal::field_layout;
 namespace radio {
 
-inline constexpr Sound::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : _cached_size_{0},
-        data_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        name_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        artist_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        album_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        genre_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()) {}
-
-template <typename>
-PROTOBUF_CONSTEXPR Sound::Sound(::_pbi::ConstantInitialized)
-    : _impl_(::_pbi::ConstantInitialized()) {}
-struct SoundDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SoundDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~SoundDefaultTypeInternal() {}
-  union {
-    Sound _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SoundDefaultTypeInternal _Sound_default_instance_;
-
 inline constexpr Request::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
-      : _cached_size_{0},
-        name_(
+      : caller_id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        artist_(
+        message_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        album_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        genre_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()) {}
+        _cached_size_{0} {}
 
 template <typename>
 PROTOBUF_CONSTEXPR Request::Request(::_pbi::ConstantInitialized)
@@ -85,32 +46,15 @@ struct RequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RequestDefaultTypeInternal _Request_default_instance_;
 
-inline constexpr Error::Impl_::Impl_(
+inline constexpr Broadcast::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
-      : message_(
+      : caller_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        message_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         _cached_size_{0} {}
-
-template <typename>
-PROTOBUF_CONSTEXPR Error::Error(::_pbi::ConstantInitialized)
-    : _impl_(::_pbi::ConstantInitialized()) {}
-struct ErrorDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ErrorDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ErrorDefaultTypeInternal() {}
-  union {
-    Error _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ErrorDefaultTypeInternal _Error_default_instance_;
-
-inline constexpr Broadcast::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : result_{},
-        _cached_size_{0},
-        _oneof_case_{} {}
 
 template <typename>
 PROTOBUF_CONSTEXPR Broadcast::Broadcast(::_pbi::ConstantInitialized)
@@ -126,14 +70,14 @@ struct BroadcastDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BroadcastDefaultTypeInternal _Broadcast_default_instance_;
 }  // namespace radio
-static ::_pb::Metadata file_level_metadata_radio_2eproto[4];
+static ::_pb::Metadata file_level_metadata_radio_2eproto[2];
 static constexpr const ::_pb::EnumDescriptor**
     file_level_enum_descriptors_radio_2eproto = nullptr;
 static constexpr const ::_pb::ServiceDescriptor**
     file_level_service_descriptors_radio_2eproto = nullptr;
 const ::uint32_t TableStruct_radio_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
     protodesc_cold) = {
-    PROTOBUF_FIELD_OFFSET(::radio::Request, _impl_._has_bits_),
+    ~0u,  // no _has_bits_
     PROTOBUF_FIELD_OFFSET(::radio::Request, _internal_metadata_),
     ~0u,  // no _extensions_
     ~0u,  // no _oneof_case_
@@ -141,93 +85,48 @@ const ::uint32_t TableStruct_radio_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
     ~0u,  // no _inlined_string_donated_
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::radio::Request, _impl_.name_),
-    PROTOBUF_FIELD_OFFSET(::radio::Request, _impl_.artist_),
-    PROTOBUF_FIELD_OFFSET(::radio::Request, _impl_.album_),
-    PROTOBUF_FIELD_OFFSET(::radio::Request, _impl_.genre_),
-    0,
-    1,
-    2,
-    3,
+    PROTOBUF_FIELD_OFFSET(::radio::Request, _impl_.caller_id_),
+    PROTOBUF_FIELD_OFFSET(::radio::Request, _impl_.message_),
     ~0u,  // no _has_bits_
     PROTOBUF_FIELD_OFFSET(::radio::Broadcast, _internal_metadata_),
     ~0u,  // no _extensions_
-    PROTOBUF_FIELD_OFFSET(::radio::Broadcast, _impl_._oneof_case_[0]),
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    ::_pbi::kInvalidFieldOffsetTag,
-    ::_pbi::kInvalidFieldOffsetTag,
-    PROTOBUF_FIELD_OFFSET(::radio::Broadcast, _impl_.result_),
-    PROTOBUF_FIELD_OFFSET(::radio::Sound, _impl_._has_bits_),
-    PROTOBUF_FIELD_OFFSET(::radio::Sound, _internal_metadata_),
-    ~0u,  // no _extensions_
     ~0u,  // no _oneof_case_
     ~0u,  // no _weak_field_map_
     ~0u,  // no _inlined_string_donated_
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::radio::Sound, _impl_.data_),
-    PROTOBUF_FIELD_OFFSET(::radio::Sound, _impl_.name_),
-    PROTOBUF_FIELD_OFFSET(::radio::Sound, _impl_.artist_),
-    PROTOBUF_FIELD_OFFSET(::radio::Sound, _impl_.album_),
-    PROTOBUF_FIELD_OFFSET(::radio::Sound, _impl_.genre_),
-    ~0u,
-    ~0u,
-    0,
-    1,
-    2,
-    ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::radio::Error, _internal_metadata_),
-    ~0u,  // no _extensions_
-    ~0u,  // no _oneof_case_
-    ~0u,  // no _weak_field_map_
-    ~0u,  // no _inlined_string_donated_
-    ~0u,  // no _split_
-    ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::radio::Error, _impl_.message_),
+    PROTOBUF_FIELD_OFFSET(::radio::Broadcast, _impl_.caller_id_),
+    PROTOBUF_FIELD_OFFSET(::radio::Broadcast, _impl_.message_),
 };
 
 static const ::_pbi::MigrationSchema
     schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, 12, -1, sizeof(::radio::Request)},
-        {16, -1, -1, sizeof(::radio::Broadcast)},
-        {27, 40, -1, sizeof(::radio::Sound)},
-        {45, -1, -1, sizeof(::radio::Error)},
+        {0, -1, -1, sizeof(::radio::Request)},
+        {10, -1, -1, sizeof(::radio::Broadcast)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
     &::radio::_Request_default_instance_._instance,
     &::radio::_Broadcast_default_instance_._instance,
-    &::radio::_Sound_default_instance_._instance,
-    &::radio::_Error_default_instance_._instance,
 };
 const char descriptor_table_protodef_radio_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n\013radio.proto\022\005radio\"\201\001\n\007Request\022\021\n\004name"
-    "\030\001 \001(\tH\000\210\001\001\022\023\n\006artist\030\002 \001(\tH\001\210\001\001\022\022\n\005albu"
-    "m\030\003 \001(\tH\002\210\001\001\022\022\n\005genre\030\004 \001(\tH\003\210\001\001B\007\n\005_nam"
-    "eB\t\n\007_artistB\010\n\006_albumB\010\n\006_genre\"S\n\tBroa"
-    "dcast\022\035\n\005sound\030\001 \001(\0132\014.radio.SoundH\000\022\035\n\005"
-    "error\030\002 \001(\0132\014.radio.ErrorH\000B\010\n\006result\"\177\n"
-    "\005Sound\022\014\n\004data\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022\023\n\006ar"
-    "tist\030\003 \001(\tH\000\210\001\001\022\022\n\005album\030\004 \001(\tH\001\210\001\001\022\022\n\005g"
-    "enre\030\005 \001(\tH\002\210\001\001B\t\n\007_artistB\010\n\006_albumB\010\n\006"
-    "_genre\"\030\n\005Error\022\017\n\007message\030\001 \001(\t2=\n\010Radi"
-    "oAPI\0221\n\007Station\022\016.radio.Request\032\020.radio."
-    "Broadcast\"\000(\0010\001B\tZ\007./radiob\006proto3"
+    "\n\013radio.proto\022\005radio\"-\n\007Request\022\021\n\tcalle"
+    "r_id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\"/\n\tBroadcast"
+    "\022\021\n\tcaller_id\030\001 \001(\t\022\017\n\007message\030\002 \001(\t2=\n\010"
+    "RadioAPI\0221\n\007Station\022\016.radio.Request\032\020.ra"
+    "dio.Broadcast\"\000(\0010\001B\tZ\007./radiob\006proto3"
 };
 static ::absl::once_flag descriptor_table_radio_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_radio_2eproto = {
     false,
     false,
-    474,
+    198,
     descriptor_table_protodef_radio_2eproto,
     "radio.proto",
     &descriptor_table_radio_2eproto_once,
     nullptr,
     0,
-    4,
+    2,
     schemas,
     file_default_instances,
     TableStruct_radio_2eproto::offsets,
@@ -258,21 +157,6 @@ namespace radio {
 
 class Request::_Internal {
  public:
-  using HasBits = decltype(std::declval<Request>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(Request, _impl_._has_bits_);
-  static void set_has_name(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static void set_has_artist(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_album(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static void set_has_genre(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
-  }
 };
 
 Request::Request(::google::protobuf::Arena* arena)
@@ -283,12 +167,9 @@ Request::Request(::google::protobuf::Arena* arena)
 inline PROTOBUF_NDEBUG_INLINE Request::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
     const Impl_& from)
-      : _has_bits_{from._has_bits_},
-        _cached_size_{0},
-        name_(arena, from.name_),
-        artist_(arena, from.artist_),
-        album_(arena, from.album_),
-        genre_(arena, from.genre_) {}
+      : caller_id_(arena, from.caller_id_),
+        message_(arena, from.message_),
+        _cached_size_{0} {}
 
 Request::Request(
     ::google::protobuf::Arena* arena,
@@ -305,11 +186,9 @@ Request::Request(
 inline PROTOBUF_NDEBUG_INLINE Request::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* arena)
-      : _cached_size_{0},
-        name_(arena),
-        artist_(arena),
-        album_(arena),
-        genre_(arena) {}
+      : caller_id_(arena),
+        message_(arena),
+        _cached_size_{0} {}
 
 inline void Request::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
@@ -321,10 +200,8 @@ Request::~Request() {
 }
 inline void Request::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
-  _impl_.name_.Destroy();
-  _impl_.artist_.Destroy();
-  _impl_.album_.Destroy();
-  _impl_.genre_.Destroy();
+  _impl_.caller_id_.Destroy();
+  _impl_.message_.Destroy();
   _impl_.~Impl_();
 }
 
@@ -335,22 +212,8 @@ PROTOBUF_NOINLINE void Request::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000000fu) {
-    if (cached_has_bits & 0x00000001u) {
-      _impl_.name_.ClearNonDefaultToEmpty();
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _impl_.artist_.ClearNonDefaultToEmpty();
-    }
-    if (cached_has_bits & 0x00000004u) {
-      _impl_.album_.ClearNonDefaultToEmpty();
-    }
-    if (cached_has_bits & 0x00000008u) {
-      _impl_.genre_.ClearNonDefaultToEmpty();
-    }
-  }
-  _impl_._has_bits_.Clear();
+  _impl_.caller_id_.ClearToEmpty();
+  _impl_.message_.ClearToEmpty();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
@@ -362,56 +225,42 @@ const char* Request::_InternalParse(
 
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 4, 0, 42, 2> Request::_table_ = {
+const ::_pbi::TcParseTable<1, 2, 0, 38, 2> Request::_table_ = {
   {
-    PROTOBUF_FIELD_OFFSET(Request, _impl_._has_bits_),
+    0,  // no _has_bits_
     0, // no _extensions_
-    4, 24,  // max_field_number, fast_idx_mask
+    2, 8,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967280,  // skipmap
+    4294967292,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    4,  // num_field_entries
+    2,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     &_Request_default_instance_._instance,
     ::_pbi::TcParser::GenericFallback,  // fallback
   }, {{
-    // optional string genre = 4;
+    // string message = 2;
     {::_pbi::TcParser::FastUS1,
-     {34, 3, 0, PROTOBUF_FIELD_OFFSET(Request, _impl_.genre_)}},
-    // optional string name = 1;
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(Request, _impl_.message_)}},
+    // string caller_id = 1;
     {::_pbi::TcParser::FastUS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(Request, _impl_.name_)}},
-    // optional string artist = 2;
-    {::_pbi::TcParser::FastUS1,
-     {18, 1, 0, PROTOBUF_FIELD_OFFSET(Request, _impl_.artist_)}},
-    // optional string album = 3;
-    {::_pbi::TcParser::FastUS1,
-     {26, 2, 0, PROTOBUF_FIELD_OFFSET(Request, _impl_.album_)}},
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(Request, _impl_.caller_id_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // optional string name = 1;
-    {PROTOBUF_FIELD_OFFSET(Request, _impl_.name_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional string artist = 2;
-    {PROTOBUF_FIELD_OFFSET(Request, _impl_.artist_), _Internal::kHasBitsOffset + 1, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional string album = 3;
-    {PROTOBUF_FIELD_OFFSET(Request, _impl_.album_), _Internal::kHasBitsOffset + 2, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional string genre = 4;
-    {PROTOBUF_FIELD_OFFSET(Request, _impl_.genre_), _Internal::kHasBitsOffset + 3, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string caller_id = 1;
+    {PROTOBUF_FIELD_OFFSET(Request, _impl_.caller_id_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string message = 2;
+    {PROTOBUF_FIELD_OFFSET(Request, _impl_.message_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
   // no aux_entries
   {{
-    "\15\4\6\5\5\0\0\0"
+    "\15\11\7\0\0\0\0\0"
     "radio.Request"
-    "name"
-    "artist"
-    "album"
-    "genre"
+    "caller_id"
+    "message"
   }},
 };
 
@@ -422,37 +271,20 @@ const ::_pbi::TcParseTable<2, 4, 0, 42, 2> Request::_table_ = {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  // optional string name = 1;
-  if (cached_has_bits & 0x00000001u) {
-    const std::string& _s = this->_internal_name();
+  // string caller_id = 1;
+  if (!this->_internal_caller_id().empty()) {
+    const std::string& _s = this->_internal_caller_id();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "radio.Request.name");
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "radio.Request.caller_id");
     target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
-  // optional string artist = 2;
-  if (cached_has_bits & 0x00000002u) {
-    const std::string& _s = this->_internal_artist();
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    const std::string& _s = this->_internal_message();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "radio.Request.artist");
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "radio.Request.message");
     target = stream->WriteStringMaybeAliased(2, _s, target);
-  }
-
-  // optional string album = 3;
-  if (cached_has_bits & 0x00000004u) {
-    const std::string& _s = this->_internal_album();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "radio.Request.album");
-    target = stream->WriteStringMaybeAliased(3, _s, target);
-  }
-
-  // optional string genre = 4;
-  if (cached_has_bits & 0x00000008u) {
-    const std::string& _s = this->_internal_genre();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "radio.Request.genre");
-    target = stream->WriteStringMaybeAliased(4, _s, target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -472,33 +304,18 @@ const ::_pbi::TcParseTable<2, 4, 0, 42, 2> Request::_table_ = {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000000fu) {
-    // optional string name = 1;
-    if (cached_has_bits & 0x00000001u) {
-      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this->_internal_name());
-    }
-
-    // optional string artist = 2;
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this->_internal_artist());
-    }
-
-    // optional string album = 3;
-    if (cached_has_bits & 0x00000004u) {
-      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this->_internal_album());
-    }
-
-    // optional string genre = 4;
-    if (cached_has_bits & 0x00000008u) {
-      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this->_internal_genre());
-    }
-
+  // string caller_id = 1;
+  if (!this->_internal_caller_id().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_caller_id());
   }
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_message());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -518,20 +335,11 @@ void Request::MergeImpl(::google::protobuf::Message& to_msg, const ::google::pro
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000000fu) {
-    if (cached_has_bits & 0x00000001u) {
-      _this->_internal_set_name(from._internal_name());
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _this->_internal_set_artist(from._internal_artist());
-    }
-    if (cached_has_bits & 0x00000004u) {
-      _this->_internal_set_album(from._internal_album());
-    }
-    if (cached_has_bits & 0x00000008u) {
-      _this->_internal_set_genre(from._internal_genre());
-    }
+  if (!from._internal_caller_id().empty()) {
+    _this->_internal_set_caller_id(from._internal_caller_id());
+  }
+  if (!from._internal_message().empty()) {
+    _this->_internal_set_message(from._internal_message());
   }
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -555,11 +363,8 @@ void Request::InternalSwap(Request* PROTOBUF_RESTRICT other) {
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.name_, &other->_impl_.name_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.artist_, &other->_impl_.artist_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.album_, &other->_impl_.album_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.genre_, &other->_impl_.genre_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.caller_id_, &other->_impl_.caller_id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_, &other->_impl_.message_, arena);
 }
 
 ::google::protobuf::Metadata Request::GetMetadata() const {
@@ -571,44 +376,8 @@ void Request::InternalSwap(Request* PROTOBUF_RESTRICT other) {
 
 class Broadcast::_Internal {
  public:
-  static constexpr ::int32_t kOneofCaseOffset =
-    PROTOBUF_FIELD_OFFSET(::radio::Broadcast, _impl_._oneof_case_);
-  static const ::radio::Sound& sound(const Broadcast* msg);
-  static const ::radio::Error& error(const Broadcast* msg);
 };
 
-const ::radio::Sound& Broadcast::_Internal::sound(const Broadcast* msg) {
-  return *msg->_impl_.result_.sound_;
-}
-const ::radio::Error& Broadcast::_Internal::error(const Broadcast* msg) {
-  return *msg->_impl_.result_.error_;
-}
-void Broadcast::set_allocated_sound(::radio::Sound* sound) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  clear_result();
-  if (sound) {
-    ::google::protobuf::Arena* submessage_arena = sound->GetArena();
-    if (message_arena != submessage_arena) {
-      sound = ::google::protobuf::internal::GetOwnedMessage(message_arena, sound, submessage_arena);
-    }
-    set_has_sound();
-    _impl_.result_.sound_ = sound;
-  }
-  // @@protoc_insertion_point(field_set_allocated:radio.Broadcast.sound)
-}
-void Broadcast::set_allocated_error(::radio::Error* error) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  clear_result();
-  if (error) {
-    ::google::protobuf::Arena* submessage_arena = error->GetArena();
-    if (message_arena != submessage_arena) {
-      error = ::google::protobuf::internal::GetOwnedMessage(message_arena, error, submessage_arena);
-    }
-    set_has_error();
-    _impl_.result_.error_ = error;
-  }
-  // @@protoc_insertion_point(field_set_allocated:radio.Broadcast.error)
-}
 Broadcast::Broadcast(::google::protobuf::Arena* arena)
     : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
@@ -617,9 +386,9 @@ Broadcast::Broadcast(::google::protobuf::Arena* arena)
 inline PROTOBUF_NDEBUG_INLINE Broadcast::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
     const Impl_& from)
-      : result_{},
-        _cached_size_{0},
-        _oneof_case_{from._oneof_case_[0]} {}
+      : caller_id_(arena, from.caller_id_),
+        message_(arena, from.message_),
+        _cached_size_{0} {}
 
 Broadcast::Broadcast(
     ::google::protobuf::Arena* arena,
@@ -630,25 +399,15 @@ Broadcast::Broadcast(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
-  switch (result_case()) {
-    case RESULT_NOT_SET:
-      break;
-      case kSound:
-        _impl_.result_.sound_ = CreateMaybeMessage<::radio::Sound>(arena, *from._impl_.result_.sound_);
-        break;
-      case kError:
-        _impl_.result_.error_ = CreateMaybeMessage<::radio::Error>(arena, *from._impl_.result_.error_);
-        break;
-  }
 
   // @@protoc_insertion_point(copy_constructor:radio.Broadcast)
 }
 inline PROTOBUF_NDEBUG_INLINE Broadcast::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* arena)
-      : result_{},
-        _cached_size_{0},
-        _oneof_case_{} {}
+      : caller_id_(arena),
+        message_(arena),
+        _cached_size_{0} {}
 
 inline void Broadcast::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
@@ -660,35 +419,10 @@ Broadcast::~Broadcast() {
 }
 inline void Broadcast::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
-  if (has_result()) {
-    clear_result();
-  }
+  _impl_.caller_id_.Destroy();
+  _impl_.message_.Destroy();
   _impl_.~Impl_();
 }
-
-void Broadcast::clear_result() {
-// @@protoc_insertion_point(one_of_clear_start:radio.Broadcast)
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  switch (result_case()) {
-    case kSound: {
-      if (GetArena() == nullptr) {
-        delete _impl_.result_.sound_;
-      }
-      break;
-    }
-    case kError: {
-      if (GetArena() == nullptr) {
-        delete _impl_.result_.error_;
-      }
-      break;
-    }
-    case RESULT_NOT_SET: {
-      break;
-    }
-  }
-  _impl_._oneof_case_[0] = RESULT_NOT_SET;
-}
-
 
 PROTOBUF_NOINLINE void Broadcast::Clear() {
 // @@protoc_insertion_point(message_clear_start:radio.Broadcast)
@@ -697,7 +431,8 @@ PROTOBUF_NOINLINE void Broadcast::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  clear_result();
+  _impl_.caller_id_.ClearToEmpty();
+  _impl_.message_.ClearToEmpty();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
@@ -709,34 +444,42 @@ const char* Broadcast::_InternalParse(
 
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 2, 2, 0, 2> Broadcast::_table_ = {
+const ::_pbi::TcParseTable<1, 2, 0, 40, 2> Broadcast::_table_ = {
   {
     0,  // no _has_bits_
     0, // no _extensions_
-    2, 0,  // max_field_number, fast_idx_mask
+    2, 8,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
     4294967292,  // skipmap
     offsetof(decltype(_table_), field_entries),
     2,  // num_field_entries
-    2,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
     &_Broadcast_default_instance_._instance,
     ::_pbi::TcParser::GenericFallback,  // fallback
   }, {{
-    {::_pbi::TcParser::MiniParse, {}},
+    // string message = 2;
+    {::_pbi::TcParser::FastUS1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(Broadcast, _impl_.message_)}},
+    // string caller_id = 1;
+    {::_pbi::TcParser::FastUS1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(Broadcast, _impl_.caller_id_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // .radio.Sound sound = 1;
-    {PROTOBUF_FIELD_OFFSET(Broadcast, _impl_.result_.sound_), _Internal::kOneofCaseOffset + 0, 0,
-    (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .radio.Error error = 2;
-    {PROTOBUF_FIELD_OFFSET(Broadcast, _impl_.result_.error_), _Internal::kOneofCaseOffset + 0, 1,
-    (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
-  }}, {{
-    {::_pbi::TcParser::GetTable<::radio::Sound>()},
-    {::_pbi::TcParser::GetTable<::radio::Error>()},
-  }}, {{
+    // string caller_id = 1;
+    {PROTOBUF_FIELD_OFFSET(Broadcast, _impl_.caller_id_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string message = 2;
+    {PROTOBUF_FIELD_OFFSET(Broadcast, _impl_.message_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\17\11\7\0\0\0\0\0"
+    "radio.Broadcast"
+    "caller_id"
+    "message"
   }},
 };
 
@@ -747,22 +490,22 @@ const ::_pbi::TcParseTable<0, 2, 2, 0, 2> Broadcast::_table_ = {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  switch (result_case()) {
-    case kSound: {
-      target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-          1, _Internal::sound(this),
-          _Internal::sound(this).GetCachedSize(), target, stream);
-      break;
-    }
-    case kError: {
-      target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-          2, _Internal::error(this),
-          _Internal::error(this).GetCachedSize(), target, stream);
-      break;
-    }
-    default:
-      break;
+  // string caller_id = 1;
+  if (!this->_internal_caller_id().empty()) {
+    const std::string& _s = this->_internal_caller_id();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "radio.Broadcast.caller_id");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    const std::string& _s = this->_internal_message();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "radio.Broadcast.message");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target =
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -780,23 +523,18 @@ const ::_pbi::TcParseTable<0, 2, 2, 0, 2> Broadcast::_table_ = {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  switch (result_case()) {
-    // .radio.Sound sound = 1;
-    case kSound: {
-      total_size +=
-          1 + ::google::protobuf::internal::WireFormatLite::MessageSize(*_impl_.result_.sound_);
-      break;
-    }
-    // .radio.Error error = 2;
-    case kError: {
-      total_size +=
-          1 + ::google::protobuf::internal::WireFormatLite::MessageSize(*_impl_.result_.error_);
-      break;
-    }
-    case RESULT_NOT_SET: {
-      break;
-    }
+  // string caller_id = 1;
+  if (!this->_internal_caller_id().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_caller_id());
   }
+
+  // string message = 2;
+  if (!this->_internal_message().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_message());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -816,20 +554,11 @@ void Broadcast::MergeImpl(::google::protobuf::Message& to_msg, const ::google::p
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  switch (from.result_case()) {
-    case kSound: {
-      _this->_internal_mutable_sound()->::radio::Sound::MergeFrom(
-          from._internal_sound());
-      break;
-    }
-    case kError: {
-      _this->_internal_mutable_error()->::radio::Error::MergeFrom(
-          from._internal_error());
-      break;
-    }
-    case RESULT_NOT_SET: {
-      break;
-    }
+  if (!from._internal_caller_id().empty()) {
+    _this->_internal_set_caller_id(from._internal_caller_id());
+  }
+  if (!from._internal_message().empty()) {
+    _this->_internal_set_message(from._internal_message());
   }
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -850,545 +579,17 @@ PROTOBUF_NOINLINE bool Broadcast::IsInitialized() const {
 }
 void Broadcast::InternalSwap(Broadcast* PROTOBUF_RESTRICT other) {
   using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.result_, other->_impl_.result_);
-  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.caller_id_, &other->_impl_.caller_id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_, &other->_impl_.message_, arena);
 }
 
 ::google::protobuf::Metadata Broadcast::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_radio_2eproto_getter, &descriptor_table_radio_2eproto_once,
       file_level_metadata_radio_2eproto[1]);
-}
-// ===================================================================
-
-class Sound::_Internal {
- public:
-  using HasBits = decltype(std::declval<Sound>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-    8 * PROTOBUF_FIELD_OFFSET(Sound, _impl_._has_bits_);
-  static void set_has_artist(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static void set_has_album(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_genre(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-};
-
-Sound::Sound(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:radio.Sound)
-}
-inline PROTOBUF_NDEBUG_INLINE Sound::Impl_::Impl_(
-    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
-    const Impl_& from)
-      : _has_bits_{from._has_bits_},
-        _cached_size_{0},
-        data_(arena, from.data_),
-        name_(arena, from.name_),
-        artist_(arena, from.artist_),
-        album_(arena, from.album_),
-        genre_(arena, from.genre_) {}
-
-Sound::Sound(
-    ::google::protobuf::Arena* arena,
-    const Sound& from)
-    : ::google::protobuf::Message(arena) {
-  Sound* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
-
-  // @@protoc_insertion_point(copy_constructor:radio.Sound)
-}
-inline PROTOBUF_NDEBUG_INLINE Sound::Impl_::Impl_(
-    ::google::protobuf::internal::InternalVisibility visibility,
-    ::google::protobuf::Arena* arena)
-      : _cached_size_{0},
-        data_(arena),
-        name_(arena),
-        artist_(arena),
-        album_(arena),
-        genre_(arena) {}
-
-inline void Sound::SharedCtor(::_pb::Arena* arena) {
-  new (&_impl_) Impl_(internal_visibility(), arena);
-}
-Sound::~Sound() {
-  // @@protoc_insertion_point(destructor:radio.Sound)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
-  SharedDtor();
-}
-inline void Sound::SharedDtor() {
-  ABSL_DCHECK(GetArena() == nullptr);
-  _impl_.data_.Destroy();
-  _impl_.name_.Destroy();
-  _impl_.artist_.Destroy();
-  _impl_.album_.Destroy();
-  _impl_.genre_.Destroy();
-  _impl_.~Impl_();
-}
-
-PROTOBUF_NOINLINE void Sound::Clear() {
-// @@protoc_insertion_point(message_clear_start:radio.Sound)
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.data_.ClearToEmpty();
-  _impl_.name_.ClearToEmpty();
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    if (cached_has_bits & 0x00000001u) {
-      _impl_.artist_.ClearNonDefaultToEmpty();
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _impl_.album_.ClearNonDefaultToEmpty();
-    }
-    if (cached_has_bits & 0x00000004u) {
-      _impl_.genre_.ClearNonDefaultToEmpty();
-    }
-  }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
-}
-
-const char* Sound::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
-  return ptr;
-}
-
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 5, 0, 44, 2> Sound::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(Sound, _impl_._has_bits_),
-    0, // no _extensions_
-    5, 56,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967264,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    5,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_Sound_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-    // string data = 1;
-    {::_pbi::TcParser::FastUS1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(Sound, _impl_.data_)}},
-    // string name = 2;
-    {::_pbi::TcParser::FastUS1,
-     {18, 63, 0, PROTOBUF_FIELD_OFFSET(Sound, _impl_.name_)}},
-    // optional string artist = 3;
-    {::_pbi::TcParser::FastUS1,
-     {26, 0, 0, PROTOBUF_FIELD_OFFSET(Sound, _impl_.artist_)}},
-    // optional string album = 4;
-    {::_pbi::TcParser::FastUS1,
-     {34, 1, 0, PROTOBUF_FIELD_OFFSET(Sound, _impl_.album_)}},
-    // optional string genre = 5;
-    {::_pbi::TcParser::FastUS1,
-     {42, 2, 0, PROTOBUF_FIELD_OFFSET(Sound, _impl_.genre_)}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // string data = 1;
-    {PROTOBUF_FIELD_OFFSET(Sound, _impl_.data_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string name = 2;
-    {PROTOBUF_FIELD_OFFSET(Sound, _impl_.name_), -1, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional string artist = 3;
-    {PROTOBUF_FIELD_OFFSET(Sound, _impl_.artist_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional string album = 4;
-    {PROTOBUF_FIELD_OFFSET(Sound, _impl_.album_), _Internal::kHasBitsOffset + 1, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional string genre = 5;
-    {PROTOBUF_FIELD_OFFSET(Sound, _impl_.genre_), _Internal::kHasBitsOffset + 2, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-  }},
-  // no aux_entries
-  {{
-    "\13\4\4\6\5\5\0\0"
-    "radio.Sound"
-    "data"
-    "name"
-    "artist"
-    "album"
-    "genre"
-  }},
-};
-
-::uint8_t* Sound::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:radio.Sound)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  // string data = 1;
-  if (!this->_internal_data().empty()) {
-    const std::string& _s = this->_internal_data();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "radio.Sound.data");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
-  }
-
-  // string name = 2;
-  if (!this->_internal_name().empty()) {
-    const std::string& _s = this->_internal_name();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "radio.Sound.name");
-    target = stream->WriteStringMaybeAliased(2, _s, target);
-  }
-
-  cached_has_bits = _impl_._has_bits_[0];
-  // optional string artist = 3;
-  if (cached_has_bits & 0x00000001u) {
-    const std::string& _s = this->_internal_artist();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "radio.Sound.artist");
-    target = stream->WriteStringMaybeAliased(3, _s, target);
-  }
-
-  // optional string album = 4;
-  if (cached_has_bits & 0x00000002u) {
-    const std::string& _s = this->_internal_album();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "radio.Sound.album");
-    target = stream->WriteStringMaybeAliased(4, _s, target);
-  }
-
-  // optional string genre = 5;
-  if (cached_has_bits & 0x00000004u) {
-    const std::string& _s = this->_internal_genre();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "radio.Sound.genre");
-    target = stream->WriteStringMaybeAliased(5, _s, target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:radio.Sound)
-  return target;
-}
-
-::size_t Sound::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:radio.Sound)
-  ::size_t total_size = 0;
-
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string data = 1;
-  if (!this->_internal_data().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                    this->_internal_data());
-  }
-
-  // string name = 2;
-  if (!this->_internal_name().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                    this->_internal_name());
-  }
-
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    // optional string artist = 3;
-    if (cached_has_bits & 0x00000001u) {
-      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this->_internal_artist());
-    }
-
-    // optional string album = 4;
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this->_internal_album());
-    }
-
-    // optional string genre = 5;
-    if (cached_has_bits & 0x00000004u) {
-      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this->_internal_genre());
-    }
-
-  }
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::google::protobuf::Message::ClassData Sound::_class_data_ = {
-    Sound::MergeImpl,
-    nullptr,  // OnDemandRegisterArenaDtor
-};
-const ::google::protobuf::Message::ClassData* Sound::GetClassData() const {
-  return &_class_data_;
-}
-
-void Sound::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
-  auto* const _this = static_cast<Sound*>(&to_msg);
-  auto& from = static_cast<const Sound&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:radio.Sound)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_data().empty()) {
-    _this->_internal_set_data(from._internal_data());
-  }
-  if (!from._internal_name().empty()) {
-    _this->_internal_set_name(from._internal_name());
-  }
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
-    if (cached_has_bits & 0x00000001u) {
-      _this->_internal_set_artist(from._internal_artist());
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _this->_internal_set_album(from._internal_album());
-    }
-    if (cached_has_bits & 0x00000004u) {
-      _this->_internal_set_genre(from._internal_genre());
-    }
-  }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void Sound::CopyFrom(const Sound& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:radio.Sound)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-PROTOBUF_NOINLINE bool Sound::IsInitialized() const {
-  return true;
-}
-
-::_pbi::CachedSize* Sound::AccessCachedSize() const {
-  return &_impl_._cached_size_;
-}
-void Sound::InternalSwap(Sound* PROTOBUF_RESTRICT other) {
-  using std::swap;
-  auto* arena = GetArena();
-  ABSL_DCHECK_EQ(arena, other->GetArena());
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.data_, &other->_impl_.data_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.name_, &other->_impl_.name_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.artist_, &other->_impl_.artist_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.album_, &other->_impl_.album_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.genre_, &other->_impl_.genre_, arena);
-}
-
-::google::protobuf::Metadata Sound::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_radio_2eproto_getter, &descriptor_table_radio_2eproto_once,
-      file_level_metadata_radio_2eproto[2]);
-}
-// ===================================================================
-
-class Error::_Internal {
- public:
-};
-
-Error::Error(::google::protobuf::Arena* arena)
-    : ::google::protobuf::Message(arena) {
-  SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:radio.Error)
-}
-inline PROTOBUF_NDEBUG_INLINE Error::Impl_::Impl_(
-    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
-    const Impl_& from)
-      : message_(arena, from.message_),
-        _cached_size_{0} {}
-
-Error::Error(
-    ::google::protobuf::Arena* arena,
-    const Error& from)
-    : ::google::protobuf::Message(arena) {
-  Error* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
-
-  // @@protoc_insertion_point(copy_constructor:radio.Error)
-}
-inline PROTOBUF_NDEBUG_INLINE Error::Impl_::Impl_(
-    ::google::protobuf::internal::InternalVisibility visibility,
-    ::google::protobuf::Arena* arena)
-      : message_(arena),
-        _cached_size_{0} {}
-
-inline void Error::SharedCtor(::_pb::Arena* arena) {
-  new (&_impl_) Impl_(internal_visibility(), arena);
-}
-Error::~Error() {
-  // @@protoc_insertion_point(destructor:radio.Error)
-  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
-  SharedDtor();
-}
-inline void Error::SharedDtor() {
-  ABSL_DCHECK(GetArena() == nullptr);
-  _impl_.message_.Destroy();
-  _impl_.~Impl_();
-}
-
-PROTOBUF_NOINLINE void Error::Clear() {
-// @@protoc_insertion_point(message_clear_start:radio.Error)
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.message_.ClearToEmpty();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
-}
-
-const char* Error::_InternalParse(
-    const char* ptr, ::_pbi::ParseContext* ctx) {
-  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
-  return ptr;
-}
-
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 27, 2> Error::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    1, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967294,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    1,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    &_Error_default_instance_._instance,
-    ::_pbi::TcParser::GenericFallback,  // fallback
-  }, {{
-    // string message = 1;
-    {::_pbi::TcParser::FastUS1,
-     {10, 63, 0, PROTOBUF_FIELD_OFFSET(Error, _impl_.message_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // string message = 1;
-    {PROTOBUF_FIELD_OFFSET(Error, _impl_.message_), 0, 0,
-    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
-  }},
-  // no aux_entries
-  {{
-    "\13\7\0\0\0\0\0\0"
-    "radio.Error"
-    "message"
-  }},
-};
-
-::uint8_t* Error::_InternalSerialize(
-    ::uint8_t* target,
-    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:radio.Error)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  // string message = 1;
-  if (!this->_internal_message().empty()) {
-    const std::string& _s = this->_internal_message();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "radio.Error.message");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:radio.Error)
-  return target;
-}
-
-::size_t Error::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:radio.Error)
-  ::size_t total_size = 0;
-
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string message = 1;
-  if (!this->_internal_message().empty()) {
-    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                    this->_internal_message());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::google::protobuf::Message::ClassData Error::_class_data_ = {
-    Error::MergeImpl,
-    nullptr,  // OnDemandRegisterArenaDtor
-};
-const ::google::protobuf::Message::ClassData* Error::GetClassData() const {
-  return &_class_data_;
-}
-
-void Error::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
-  auto* const _this = static_cast<Error*>(&to_msg);
-  auto& from = static_cast<const Error&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:radio.Error)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_message().empty()) {
-    _this->_internal_set_message(from._internal_message());
-  }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void Error::CopyFrom(const Error& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:radio.Error)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-PROTOBUF_NOINLINE bool Error::IsInitialized() const {
-  return true;
-}
-
-::_pbi::CachedSize* Error::AccessCachedSize() const {
-  return &_impl_._cached_size_;
-}
-void Error::InternalSwap(Error* PROTOBUF_RESTRICT other) {
-  using std::swap;
-  auto* arena = GetArena();
-  ABSL_DCHECK_EQ(arena, other->GetArena());
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_, &other->_impl_.message_, arena);
-}
-
-::google::protobuf::Metadata Error::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_radio_2eproto_getter, &descriptor_table_radio_2eproto_once,
-      file_level_metadata_radio_2eproto[3]);
 }
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace radio

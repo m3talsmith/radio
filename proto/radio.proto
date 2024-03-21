@@ -9,9 +9,11 @@ service RadioAPI {
 }
 
 message Request {
-  string name = 1;
+  string caller_id = 1;
+  string message = 2;
 }
 
 message Broadcast {
-  string name = 2;
+  string caller_id = 1;
+  string message = 2;
 }

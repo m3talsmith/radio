@@ -34,7 +34,7 @@ endif()
 
 add_executable(client
         client.cc
-        Station.cc
+        StationClient.cc
         radio.pb.cc
         radio.grpc.pb.cc
 )
